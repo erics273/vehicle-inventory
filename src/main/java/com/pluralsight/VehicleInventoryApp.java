@@ -60,6 +60,9 @@ public class VehicleInventoryApp {
             //store the answer
             int command = scanner.nextInt();
 
+            //eat newline
+            scanner.nextLine();
+
             //do something based on the answer
             switch (command) {
                 case 1 -> listAllVehicles(inventory);
@@ -88,7 +91,7 @@ public class VehicleInventoryApp {
         String makeModel = theScanner.nextLine();
 
         for(int i = 0; i < numberOfVehiclesInInventory; i++) {
-            if(inventory[i].getMakeModel().equals(makeModel)) {
+            if(inventory[i].getMakeModel().equalsIgnoreCase(makeModel)) {
                 System.out.println("make : " + inventory[i].getMakeModel());
             }
         }
